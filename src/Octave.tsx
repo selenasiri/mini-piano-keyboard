@@ -3,13 +3,6 @@ import styled from 'styled-components';
 import { NoteType } from './keyboard_notes';
 import Note from './Note';
 
-const Wrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-`
-
 type Props = {
   notes: NoteType[]
 }
@@ -28,4 +21,11 @@ const Octave: React.FC<Props> = ({ notes }) => (
   </Wrapper>
 )
 
-export default Octave;
+export default Octave
+
+const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+`;
