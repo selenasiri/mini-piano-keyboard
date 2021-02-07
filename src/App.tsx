@@ -4,10 +4,14 @@ import { notes } from './keyboard_notes';
 import Octave from './Octave'
 
 function App() {
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    console.log(e.currentTarget.value);
+  }
+
   return (
     <Wrapper>
       <div>
-        <Octave notes={notes} />
+        <Octave notes={notes} clickHandler={handleClick} />
       </div>
     </Wrapper>
   );

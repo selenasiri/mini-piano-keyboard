@@ -1,18 +1,5 @@
 import styled from 'styled-components';
 
-type Props = {
-  color: string;
-  note: string;
-}
-
-const Note: React.FC<Props> = ({ color, note }) => (
-    <>
-      {color === 'white' ? <White value={note} /> : <Black value={note} />}
-    </>
-  )
-
-export default Note
-
 const Black = styled.button`
   width: 40px;
   height: 130px;
@@ -33,9 +20,23 @@ const White = styled.button`
   border: solid black 1px;
   box-shadow: 2px 5px;
   margin: 1px;
-  margin-left: '-20px';
-  box-sizing: border-box;
+
   :active {
     background: #eee;
   }
 `;
+
+type Props = {
+  color: string;
+  note: string;
+  clickHandler: (e: React.MouseEvent<HTMLButtonElement>) => void; // console logs each key that is pressed
+}
+
+const Note: React.FC<Props> = ({ color, note, clickHandler }) => (
+    <>
+      {color === 'white' ? <White value={note} onClick={clickHandler} /> : <Black value={note} onClick={clickHandler} />}
+    </>
+ );
+
+export default Note
+
